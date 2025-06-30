@@ -1,0 +1,80 @@
+@font-face {
+    font-family: "roboto";
+    src: url(../fonts/Roboto-Regular.ttf);
+}
+
+
+
+
+
+body
+{
+    font-family: "roboto";
+    background-color: var(--mainColor);
+    color: #fff;
+}
+
+
+:root
+{
+    --mainColor : #1E202B ;
+
+}
+
+.mainBg
+{
+    background-color: var(--mainColor);
+}
+
+
+.nav-link
+{
+    --bs-nav-link-color : #fff ;
+    color: var(--bs-nav-link-color);
+}
+
+
+
+
+
+
+
+
+
+.form-control,  .btn
+{
+    --bs-border-radius: 1rem ;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* //////////////////////////////////////////////////////////////////////////////////trial */
+
