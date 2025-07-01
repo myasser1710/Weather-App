@@ -41,21 +41,24 @@ async function getData (data) {
         icon: `https:${data.current.condition.icon}` , 
         windSpeed : data.current.wind_kph ,
         windDir : data.current.wind_dir , 
-        humidty : data.current.humidity
+        humidty : data.current.humidity, 
+        date : data.forecast.forecastday[0].date
     }
 
     const tomorrowData = {
         maxTemp: data.forecast.forecastday[1].day.maxtemp_c,  
         minTemp: data.forecast.forecastday[1].day.mintemp_c,  
         text: data.forecast.forecastday[1].day.condition.text, 
-        icon: `https:${data.forecast.forecastday[1].day.condition.icon}` 
+        icon: `https:${data.forecast.forecastday[1].day.condition.icon}` ,
+        date: data.forecast.forecastday[1].date 
     }
 
     const afterTomorrowData = {
         maxTemp: data.forecast.forecastday[2].day.maxtemp_c,  
         minTemp: data.forecast.forecastday[2].day.mintemp_c,  
         text: data.forecast.forecastday[2].day.condition.text, 
-        icon: `https:${data.forecast.forecastday[2].day.condition.icon}` 
+        icon: `https:${data.forecast.forecastday[2].day.condition.icon}` ,
+        date: data.forecast.forecastday[2].date 
     }
 
     let displayArr = [ todayData , tomorrowData , afterTomorrowData ]
@@ -65,15 +68,32 @@ async function getData (data) {
 }
 
 
+function getDayOfWeek(dateString) {
+  const date = new Date(dateString);
+  
+  if (isNaN(date.getTime())) {
+    console.error('Invalid date string:', dateString);
+    return 'Invalid date';
+  }
+  
+  const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  return days[date.getDay()];
+}
+
+function extractDayMonth(dateString) {
+  const date = new Date(dateString);
+  return `${date.getDate()} ${date.toLocaleString('default', { month: 'short' })}`;
+}
+
 function displayData( input ) {
-    
+    // console.log(input[0].date);
 
     let inner = `
                 <div class="col-12 col-lg-4 p-0" style="background-color: #323544;">
                     <div class="inner" >
                         <div class="d-flex justify-content-between p-2" style="background-color: #2D303D;">
-                            <span>wenesday</span>
-                            <span>26june</span>
+                            <span>${getDayOfWeek(input[0].date)}</span>
+                            <span>${extractDayMonth(input[0].date)}</span>
                         </div>
 
                         <div class="d-flex flex-column p-3">
@@ -84,8 +104,8 @@ function displayData( input ) {
 
                         <div class="d-flex gap-4  pb-3 px-3" >
                             <span><i class="me-1 fa-solid fa-umbrella"></i>${input[0].humidty}%</span>
-                            <span><i class="me-1 fa-solid fa-umbrella"></i>${input[0].windSpeed} Km/h</span>
-                            <span><i class="me-1 fa-solid fa-umbrella"></i>${input[0].windDir}</span>
+                            <span><i class="me-1 fa-solid fa-wind"></i>${input[0].windSpeed} Km/h</span>
+                            <span><i class="me-1 fa-regular fa-compass"></i>${input[0].windDir}</span>
                         </div>
                     </div>
                 </div>
@@ -94,7 +114,7 @@ function displayData( input ) {
                 <div class=" col-12 col-lg-4 p-0" style="background-color: #262936;">
                     <div class="inner " >
                         <div class="d-flex justify-content-center p-2" style="background-color: #222530;">
-                            <span>thursday</span>
+                            <span>${getDayOfWeek(input[1].date)}</span>
                         </div>
 
                         <div class="d-flex flex-column align-items-center" >
@@ -110,7 +130,7 @@ function displayData( input ) {
                     <div class="inner">
  
                         <div class="d-flex justify-content-center p-2" style="background-color: #2D303D;">
-                            <span>friday</span>
+                            <span>${getDayOfWeek(input[2].date)}</span>
                         </div>
 
                         <div class="d-flex flex-column align-items-center">

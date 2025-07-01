@@ -70,7 +70,10 @@ body
 }
 
 
+.navbar-toggler:focus {
 
+    --bs-navbar-toggler-focus-width:0;
+}
 
 
 
