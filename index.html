@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -26,7 +27,7 @@
 
             <div class="collapse navbar-collapse flex-xl-grow-0" id="navbarSupportedContent">
 
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-xl-4">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-2">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
@@ -54,13 +55,15 @@
 
 
     <!-- ------------style="background: url(images/banner.png) top/contain no-repeat; height: 100vh;" -------------------------------------------------------------------------------------------------------- -->
-    <main style="background: url(images/banner.png) no-repeat top ; ">
+    <main >
         <div class="container py-5" >
 
-            <div class="input-group my-5  ">
+            <div class="search-group my-5 " >
                 <input id="searchInput" type="text" class="form-control " placeholder="Find your location..." aria-label="Location">
-                <button class="btn btn-primary" type="button"> Search</button>
+                <button class="btn btn-primary " type="button"> Find</button>
             </div>
+
+
 
             <div id="weatherCards" class="row" style="color: #bfc1c8;">
 
@@ -128,16 +131,16 @@
 
 
 
-<!-- 
-    <footer class="container">
 
+    <footer class="py-4">
+        <div class="container ">
             <div class="row">
-                <form action="" class="col-lg-9 col-12">
-                    <input type="text" id="subscribe">
-                    <input type="button" id="subscribeBtn">
-                </form>
+                <div class="search-group col-12 col-lg-9  mb-3 ">
+                    <input type="text" class="form-control " placeholder="Find your location..." >
+                    <button class="btn btn-primary" type="button"> Find</button>
+                </div>
 
-                <div class="col-lg-3 col-12 social-links">
+                <div class="mb-3 col-lg-3 col-12 social-links d-lg-flex justify-content-centerl align-items-center gap-2">
                     <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                     <a href="#" aria-label="Google Plus"><i class="fab fa-google-plus-g"></i></a>
@@ -145,9 +148,9 @@
                 </div>
             </div>
 
-            <span>Copyright 2014 Company name. Designed by Themezy. All rights reserved</span>
-
-    </footer> -->
+            <p >Copyright 2014 Company name. Designed by Themezy. All rights reserved</p>
+        </div>
+    </footer>
 
 
 

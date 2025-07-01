@@ -83,15 +83,15 @@ function displayData( input ) {
                         </div>
 
                         <div class="d-flex gap-4  pb-3 px-3" >
-                            <span><i class="me-1 fa-solid fa-umbrella"></i>${input[0].humidty}</span>
-                            <span><i class="me-1 fa-solid fa-umbrella"></i>${input[0].windSpeed}</span>
+                            <span><i class="me-1 fa-solid fa-umbrella"></i>${input[0].humidty}%</span>
+                            <span><i class="me-1 fa-solid fa-umbrella"></i>${input[0].windSpeed} Km/h</span>
                             <span><i class="me-1 fa-solid fa-umbrella"></i>${input[0].windDir}</span>
                         </div>
                     </div>
                 </div>
 
 
-                <div class=" col-12 col-xl-4 p-0" style="background-color: #262936;">
+                <div class=" col-12 col-lg-4 p-0" style="background-color: #262936;">
                     <div class="inner " >
                         <div class="d-flex justify-content-center p-2" style="background-color: #222530;">
                             <span>thursday</span>
@@ -106,7 +106,7 @@ function displayData( input ) {
                     </div>
                 </div>           
 
-                <div class=" col-12 col-xl-4 p-0" style="background-color: #323544;">
+                <div class=" col-12 col-lg-4 p-0" style="background-color: #323544;">
                     <div class="inner">
  
                         <div class="d-flex justify-content-center p-2" style="background-color: #2D303D;">
@@ -178,6 +178,13 @@ search.addEventListener('input', () => {
 })
 
 
+//  for updating on git without tracking updates history <=========================================
+
+// git add .
+// git commit -m "Update files"
+// git push origin main
+
+//////////////////////////////////////
 
 
 
